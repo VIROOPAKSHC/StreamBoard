@@ -1,0 +1,15 @@
+streamlit
+pandas
+plost
+lime
+seaborn
+matplotlib
+numpy
+scikit-learn
+shap
+ipython
+xgboost
+lightgbm
+plotly
+pdpbox
+catboost
