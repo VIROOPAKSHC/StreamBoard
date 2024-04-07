@@ -275,4 +275,20 @@ elif selection == 'Make Predictions':
     else:
         st.write("Run the Model Building and Evaluation step.")
     
-    
+
+# Function to display contact details with a custom message
+def display_contact_details_with_love(details):
+    st.markdown("---")  # Horizontal line for separation
+    st.markdown(f"### Made with :heart: by {details['Full Name']}")
+    details.pop('Full Name')
+    for detail, value in details.items():
+        st.markdown(f"[{detail}]({value})")
+
+# Your personal details
+personal_details = {
+    'Full Name': 'Chekuri Viroopaksh',
+    'LinkedIn': 'https://www.linkedin.com/viroopaksh-chekuri',
+    'GitHub': 'https://github.com/VIROOPAKSHC'
+}
+with st.sidebar:
+    display_contact_details_with_love(personal_details)
