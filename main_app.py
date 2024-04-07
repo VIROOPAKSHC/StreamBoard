@@ -149,7 +149,8 @@ elif selection == 'Model Building and Evaluation':
     train_model = st.button('Train Model')
     if train_model:
         st.write(':blue[Training the model], please wait...')
-        model.fit(X_train, y_train)
+        if model_type != 'RandomForestClassifier':
+               model.fit(X_train, y_train,early_stopping_rounds=10)
         st.session_state['model'] = model
         predictions = model.predict(X_test)
         y_pred_prob = model.predict_proba(X_test)[:,1]
