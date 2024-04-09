@@ -149,7 +149,7 @@ elif selection == 'Model Building and Evaluation':
     train_model = st.button('Train Model')
     if train_model:
         st.write(':blue[Training the model], please wait...')
-        if model_type != 'RandomForestClassifier':
+        if model_type != 'RandomForestClassifier' and model_type!="LGBMClassifier":
                model.fit(X_train, y_train,early_stopping_rounds=10,
         eval_set=[(X_test, y_test)])
         else:
