@@ -147,7 +147,7 @@ elif selection == 'Model Building and Evaluation':
 
 
     train_model = st.button('Train Model')
-	st.write(":red[*LGBMClassifier and GradientBoostingClassifer might take more than 40 seconds to train]")
+    st.write(":red[*LGBMClassifier and GradientBoostingClassifer might take more than 40 seconds to train]")
     if train_model:
         st.write(':blue[Training the model], please wait...')
         if model_type != 'RandomForestClassifier' and model_type!="LGBMClassifier":
