@@ -1,5 +1,5 @@
 import lime.lime_tabular
-from catboost import CatBoostClassifier
+# from catboost import CatBoostClassifier
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -105,7 +105,7 @@ elif selection == 'Model Building and Evaluation':
     st.sidebar.write("Model Building and Evaluation selected.")
     st.subheader(':green[Model] Building and Evaluation')
 
-    model_type = st.selectbox('Select Model Type', ['RandomForestClassifier' ,'XGBClassifier', 'LGBMClassifier','CatBoostClassifier'])
+    model_type = st.selectbox('Select Model Type', ['RandomForestClassifier' ,'XGBClassifier', 'LGBMClassifier']) #,'CatBoostClassifier'])
     st.write("Select test size.")
     test_size = st.slider('Test Size', min_value=0.05, max_value=0.50, value=0.25, step=0.05)
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=test_size, random_state=42)
@@ -140,11 +140,11 @@ elif selection == 'Model Building and Evaluation':
         learning_rate = st.slider('Learning Rate', 0.01, 1.0, 0.1, step=0.01)
         model = LGBMClassifier(n_estimators=n_estimators, max_depth=max_depth, learning_rate=learning_rate, random_state=42)
 
-    elif model_type == 'CatBoostClassifier':
-        n_estimators = st.slider('Number of Estimators', 10, 500, 100, step=10)
-        max_depth = st.slider('Max Depth', 1, 20, 5)
-        learning_rate = st.slider('Learning Rate', 0.01, 1.0, 0.1, step=0.01)
-        model = CatBoostClassifier(n_estimators=n_estimators, max_depth=max_depth, learning_rate=learning_rate, random_state=42)
+    # elif model_type == 'CatBoostClassifier':
+    #     n_estimators = st.slider('Number of Estimators', 10, 500, 100, step=10)
+    #     max_depth = st.slider('Max Depth', 1, 20, 5)
+    #     learning_rate = st.slider('Learning Rate', 0.01, 1.0, 0.1, step=0.01)
+    #     model = CatBoostClassifier(n_estimators=n_estimators, max_depth=max_depth, learning_rate=learning_rate, random_state=42)
 
 
     train_model = st.button('Train Model')
