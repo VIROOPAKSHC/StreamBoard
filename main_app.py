@@ -1,4 +1,5 @@
 import lime.lime_tabular
+from catboost import CatBoostClassifier
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -16,7 +17,7 @@ import plotly.express as px
 import plotly.graph_objs as go
 from pdpbox import pdp, info_plots
 from sklearn.inspection import partial_dependence
-from catboost import CatBoostClassifier
+
 
 st.set_page_config(layout="wide")
 st.title("Classification Problem Dashboard")
